@@ -12,6 +12,6 @@ if last > 5:
 elif last < 6 and last != 0:
     msg = "and is less than 6 and not 0"
 else:
-    msg = "and is zero"
+    msg = "and is 0"
 
 print("Last digit of {} is {} {}".format(number, last, msg))
