@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def islower(c):
     if (int(ord(c)) >= int(ord("a"))) and int((ord(c)) <= int(ord("z"))):
         return True
