@@ -5,7 +5,7 @@ from sys import argv
 
 if __name__ == "__main__":
     if len(argv) != 4:
-        print("Usage: {} <a> <operator> <b>".format(argv[0]))
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     elif not argv[2] in ["+", "-", "*", "/"]:
         print("Unknown operator. Available operators: +, -, * and /")
