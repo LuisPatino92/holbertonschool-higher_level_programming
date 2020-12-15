@@ -13,7 +13,6 @@ int is_palindrome(listint_t **head)
 	int length, i;
 
 	length = len(*head);
-
 	if (length == 0)
 		return (1);
 	for (i = 0; i <= length / 2; i++)
@@ -35,7 +34,10 @@ int len(listint_t *head)
 	int length = 0;
 
 	while (head)
+	{
 		head = head->next;
+		length++;
+	}
 
 	return (length);
 }
