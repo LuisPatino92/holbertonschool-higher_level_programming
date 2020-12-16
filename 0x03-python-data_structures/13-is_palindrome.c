@@ -10,53 +10,23 @@
 
 int is_palindrome(listint_t **head)
 {
-	int length, i;
+	int length, i = 0, int_buff[1024];
+	listint_t *walker = *head;
 
-	length = len(*head);
-	if (length == 0)
-		return (1);
-	for (i = 0; i <= length / 2; i++)
-		if (value(*head, i) != value(*head, length - i - 1))
-			return (0);
-	return (1);
-}
-
-/**
- * len - Returns the length of a singly linked list
- *
- * @head: The linked list head
- *
- * Return: The length of the list
- */
-
-int len(listint_t *head)
-{
-	int length = 0;
-
-	while (head)
+	while (walker)
 	{
-		head = head->next;
-		length++;
+		int_buff[i] = walker->n;
+		i++;
+		walker = walker->next;
 	}
 
-	return (length);
-}
+	if (i == 0)
+		return (1);
 
-/**
- * value - Return the value of a node at index
- *
- * @head: The linked list head
- * @index: Index whose valu is desired
- *
- * Return: The n value of the node
- */
+	length = i;
 
-int value(listint_t *head, int index)
-{
-	int i = 0;
-
-	while (head && i++ < index)
-		head = head->next;
-	return (head->n);
-
+	for (i = 0; i <= length / 2; i++)
+		if (int_buff[i] != int_buff[length - i - 1])
+			return (0);
+	return (1);
 }
