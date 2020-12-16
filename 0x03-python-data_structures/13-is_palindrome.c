@@ -13,15 +13,15 @@ int is_palindrome(listint_t **head)
 	int length, i = 0, int_buff[1024];
 	listint_t *walker = *head;
 
+	if (!walker || !walker->next)
+		return (1);
+
 	while (walker)
 	{
 		int_buff[i] = walker->n;
 		i++;
 		walker = walker->next;
 	}
-
-	if (i == 0)
-		return (1);
 
 	length = i;
 
