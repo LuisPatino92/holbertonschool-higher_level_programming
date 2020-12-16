@@ -10,7 +10,7 @@
 
 int is_palindrome(listint_t **head)
 {
-	int length, i = 0, int_buff[1024];
+	int length, i = 0, int_buff[2048];
 	listint_t *walker = *head;
 
 	if (!walker || !walker->next)
@@ -22,9 +22,7 @@ int is_palindrome(listint_t **head)
 		i++;
 		walker = walker->next;
 	}
-
 	length = i;
-
 	for (i = 0; i <= length / 2; i++)
 		if (int_buff[i] != int_buff[length - i - 1])
 			return (0);
