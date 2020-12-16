@@ -2,8 +2,9 @@
 #include <Python.h>
 
 /**
- * print_python_list_info -  prints info about Python lists, in a format.
- * @list: The pointer to PyObject
+ * print_python_list_info -  Prints some data about A list python object.
+ *
+ * @list: The pointer to PyObject, is spected and its casted to list object
  */
 void print_python_list_info(PyObject *list)
 {
