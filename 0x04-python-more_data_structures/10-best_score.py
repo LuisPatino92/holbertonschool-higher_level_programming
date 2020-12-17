@@ -8,6 +8,4 @@ def best_score(a_dictionary):
         if int(a_dictionary[element]) > mayor:
             mayor = int(a_dictionary[element])
             best_score = element
-    if mayor is None:
-        return None
-    return element
+    return best_score
