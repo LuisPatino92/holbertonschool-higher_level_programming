@@ -12,10 +12,9 @@ def roman_to_int(roman_string):
         "M": 1000,
     }
 
-    for letter in roman_string:
+    for letter in str(roman_string):
         if letter not in rti:
             return 0
-    num = int(0)
 
     for i in range(len(roman_string)):
         num += int(rti[roman_string[i]])
