@@ -16,6 +16,8 @@ def roman_to_int(roman_string):
         if letter not in rti:
             return 0
 
+    num = int(0)
+
     for i in range(len(roman_string)):
         num += int(rti[roman_string[i]])
         if i > 0 and int(rti[roman_string[i - 1]]) < int(rti[roman_string[i]]):
