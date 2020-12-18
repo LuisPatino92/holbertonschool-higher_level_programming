@@ -2,8 +2,8 @@
 def best_score(a_dictionary):
     if a_dictionary is None:
         return None
-    mayor = int()
-    bestScore = str()
+    mayor = int(0)
+    bestScore = str("")
     for element in a_dictionary.keys():
         if int(a_dictionary[element]) > mayor:
             mayor = int(a_dictionary[element])
