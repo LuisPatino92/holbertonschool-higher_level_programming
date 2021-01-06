@@ -93,17 +93,16 @@ class Square:
         else:
             print("")
 
-
     def __str__(self):
         """ Generate the pattern to be printed through print()
 
         Returns: The str representation of the object
         """
         output = ""
-        for _ in range(self.__position[1]):
-            output += "\n"
 
         if self.__size > 0:
+            for _ in range(self.__position[1]):
+                output += "\n"
             for i in range(self.__size):
                 output += "{}{}\n".format(" " * (self.__position[0]),
                                           "#" * self.__size)
