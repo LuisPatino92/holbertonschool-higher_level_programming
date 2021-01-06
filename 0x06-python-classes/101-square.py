@@ -63,7 +63,7 @@ class Square:
         """
         return self.__position
 
-    @size.setter
+    @position.setter
     def position(self, value):
         """ Setter of position property
 
@@ -83,15 +83,16 @@ class Square:
 
     def my_print(self):
         """ Prints a square filling # pattern according to size"""
-        for _ in range(self.__position[1]):
-            print("")
 
         if self.__size > 0:
+            for _ in range(self.__position[1]):
+                print("")
             for i in range(self.__size):
                 print("{}{}".format(" " * (self.__position[0]),
                                     "#" * self.__size))
         else:
             print("")
+
 
     def __str__(self):
         """ Generate the pattern to be printed through print()
