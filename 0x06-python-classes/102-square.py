@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ This module has the definition of  a Square class"""
+
+
 class Square:
     """ Model of a square """
 
@@ -8,8 +10,8 @@ class Square:
 
             Args:
                 size (int): Is the size of the instance, 0 by default.
-                position (tuple): Is a tuple of two ints, represents the position 
-                    of the square instance.
+                position (tuple): Is a tuple of two ints, represents
+                    the position of the square instance.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -67,7 +69,8 @@ class Square:
         """ Setter of position property
 
         Args:
-            value (tuple of (int, int)): The position to be set in the Square instance
+            value (tuple of (int, int)): The position to be set in the Square
+                instance
         """
         if not isinstance(position, tuple) or \
                 len(position) != 2 or \
