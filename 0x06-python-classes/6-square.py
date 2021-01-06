@@ -80,7 +80,7 @@ class Square:
                 position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
 
-        self.__position = value
+        self.__size = value
 
     def my_print(self):
         """ Prints a square filling # pattern according to size"""
