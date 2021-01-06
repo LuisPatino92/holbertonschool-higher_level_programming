@@ -4,6 +4,8 @@
 
 ## Python - Classes and Objects
 
+First approach to OOP, in this project all the tasks are aimed to develop a Square model, step by step. I used constructor methods, some private attributes, and other related features.
+
 ---
 
 ## In this REPO:
@@ -12,7 +14,7 @@
 
 Empty class that defines a `Square`. Here an instance of how this empy class behaves:
 
-    guillaume@ubuntu:~/0x06$ cat 0-main.py
+    LuchoPatiño@practice:~/0x06$ cat 0-main.py
     #!/usr/bin/python3
     Square = __import__('0-square').Square
 
@@ -20,7 +22,7 @@ Empty class that defines a `Square`. Here an instance of how this empy class beh
     print(type(my_square))
     print(my_square.__dict__)
 
-    guillaume@ubuntu:~/0x06$ ./0-main.py
+    LuchoPatiño@practice:~/0x06$ ./0-main.py
     <class '0-square.Square'>
     {}
 
@@ -34,7 +36,7 @@ This one has the same class but with the following attributes:
 
 Here, an instance of how `Square` behaves:
 
-    guillaume@ubuntu:~/0x06$ cat 1-main.py
+    LuchoPatiño@practice:~/0x06$ cat 1-main.py
     #!/usr/bin/python3
     Square = __import__('1-square').Square
 
@@ -52,7 +54,7 @@ Here, an instance of how `Square` behaves:
     except Exception as e:
         print(e)
 
-    guillaume@ubuntu:~/0x06$ ./1-main.py
+    LuchoPatiño@practice:~/0x06$ ./1-main.py
     <class '1-square.Square'>
     {'_Square__size': 3}
     'Square' object has no attribute 'size'
@@ -68,7 +70,7 @@ The same `Square` class with two additional things:
 
 Here an instance of how the class could be used:
 
-    guillaume@ubuntu:~/0x06$ cat 2-main.py
+    LuchoPatiño@practice:~/0x06$ cat 2-main.py
     #!/usr/bin/python3
     Square = __import__('2-square').Square
 
@@ -104,7 +106,7 @@ Here an instance of how the class could be used:
     except Exception as e:
         print(e)
 
-    guillaume@ubuntu:~/0x06$ ./2-main.py
+    LuchoPatiño@practice:~/0x06$ ./2-main.py
     <class '2-square.Square'>
     {'_Square__size': 3}
     <class '2-square.Square'>
@@ -122,7 +124,7 @@ The same `Square` class with a new method:
 
 Here, an instance of how the `Square` class behave:
 
-    guillaume@ubuntu:~/0x06$ cat 3-main.py
+    LuchoPatiño@practice:~/0x06$ cat 3-main.py
     #!/usr/bin/python3
     Square = __import__('3-square').Square
 
@@ -142,7 +144,7 @@ Here, an instance of how the `Square` class behave:
     my_square_2 = Square(5)
     print("Area: {}".format(my_square_2.area()))
 
-    guillaume@ubuntu:~/0x06$ ./3-main.py
+    LuchoPatiño@practice:~/0x06$ ./3-main.py
     Area: 9
     'Square' object has no attribute 'size'
     'Square' object has no attribute '__size'
@@ -154,7 +156,7 @@ The same `Square` class, but with a setter for `size` instead of a constructor.
 
 Here an instance of how the class behaves:
 
-    guillaume@ubuntu:~/0x06$ cat 4-main.py
+    LuchoPatiño@practice:~/0x06$ cat 4-main.py
     #!/usr/bin/python3
     Square = __import__('4-square').Square
 
@@ -170,7 +172,7 @@ Here an instance of how the class behaves:
     except Exception as e:
         print(e)
 
-    guillaume@ubuntu:~/0x06$ ./4-main.py
+    LuchoPatiño@practice:~/0x06$ ./4-main.py
     Area: 7921 for size: 89
     Area: 9 for size: 3
     size must be an integer
@@ -199,7 +201,7 @@ Here an instance of how the method behaves:
 
     print("--")
 
-    guillaume@ubuntu:~/0x06$ ./5-main.py
+    LuchoPatiño@practice:~/0x06$ ./5-main.py
     ###
     ###
     ###
@@ -242,7 +244,7 @@ Here an instance of how `Square` behaves:
 
     print("--")
 
-    guillaume@ubuntu:~/0x06$ ./6-main.py | tr " " "_" | cat -e
+    LuchoPatiño@practice:~/0x06$ ./6-main.py | tr " " "_" | cat -e
     ###$
     ###$
     ###$
@@ -261,7 +263,7 @@ Here an instance of how `Square` behaves:
 
 The same `Square` class, but now print(`Square instance`) has the same behavior than `my_print()` method.
 
-    guillaume@ubuntu:~/0x06$ cat 101-main.py
+    LuchoPatiño@practice:~/0x06$ cat 101-main.py
     #!/usr/bin/python3
     Square = __import__('101-square').Square
 
@@ -273,7 +275,7 @@ The same `Square` class, but now print(`Square instance`) has the same behavior 
     my_square = Square(5, (4, 1))
     print(my_square)
 
-    guillaume@ubuntu:~/0x06$ ./101-main.py | tr " " "_" | cat -e
+    LuchoPatiño@practice:~/0x06$ ./101-main.py | tr " " "_" | cat -e
     #####$
     #####$
     #####$
@@ -293,7 +295,7 @@ The same `Square` class, but now its instances has the ability to be compared wi
 
 The comparrison is carried out with the area of the instance. Here an example of how the object behaves now:
 
-    guillaume@ubuntu:~/0x06$ cat 102-main.py
+    LuchoPatiño@practice:~/0x06$ cat 102-main.py
     #!/usr/bin/python3
     Square = __import__('102-square').Square
 
@@ -313,7 +315,7 @@ The comparrison is carried out with the area of the instance. Here an example of
     if s_5 >= s_6:
         print("Square 5 >= Square 6")
 
-    guillaume@ubuntu:~/0x06$ ./102-main.py
+    LuchoPatiño@practice:~/0x06$ ./102-main.py
     Square 5 < Square 6
     Square 5 <= Square 6
     Square 5 != Square 6
