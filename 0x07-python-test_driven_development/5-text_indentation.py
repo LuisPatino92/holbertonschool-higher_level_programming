@@ -20,5 +20,10 @@ def text_indentation(text):
                 ord("?"): "?" + chr(126),
                 ord(":"): ":" + chr(126)}
 
-    for line in text.translate(breakers).split(chr(126)):
-        print(line.lstrip().rstrip(), end="\n\n")
+    splited = text.translate(breakers).split(chr(126))
+
+    i = -1
+
+    for i in range(len(splited) - 1):
+        print(splited[i].lstrip().rstrip(), end="\n\n")
+    print(splited[i + 1].lstrip().rstrip(), end="")
