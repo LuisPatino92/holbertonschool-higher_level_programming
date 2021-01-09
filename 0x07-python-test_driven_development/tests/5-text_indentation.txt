@@ -1,7 +1,44 @@
-The ``text_indentation`` module
+The ``5-text_indentation.py`` module
+=============================
 
+Importing ``text_indentation`` from the ``5-text_indentation`` module.
 
-Checking for module docstring:
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Requirements checking:
+
+    MODULE DOCSTRING:
 	>>> m = __import__("5-text_indentation").__doc__
 	>>> len(m) > 1
 	True
+
+    FUNCTION DOCSTRING:
+	>>> f = __import__("5-text_indentation").text_indentation.__doc__
+	>>> len(f) > 1
+	True
+
+    PEP8:
+	>>> import os
+	>>> os.popen("pep8 5-text_indentation.py").read()
+	''
+
+    NEW_LINE AT THE END OF THE FILE
+	>>> os.popen("cat -e 5-text_indentation.py | tail -1").read()[-1]
+	'\n'
+
+VALID INPUTS HAVE CORRECT OUTPUTS:
+
+	>>> text_indentation("Lucho Ptiño")
+	Lucho Ptiño
+
+	>>> text_indentation("Hola. Qué tal?\n")
+	Hola.
+	<BLANKLINE>
+	Qué tal?
+	<BLANKLINE>
+	<BLANKLINE>
+
+	>>> text_indentation(5)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
