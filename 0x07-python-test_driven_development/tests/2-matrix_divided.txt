@@ -1,0 +1,191 @@
+The ``2-matrix_divided`` module
+=============================
+
+Importing ``matrix_divided`` from the ``2-matrix_divided`` module.
+
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Requirements checking:
+
+    MODULE DOCSTRING:
+	>>> m = __import__("2-matrix_divided").__doc__
+	>>> len(m) > 1
+	True
+
+    FUNCTION DOCSTRING:
+	>>> f = __import__("2-matrix_divided").matrix_divided.__doc__
+	>>> len(f) > 1
+	True
+
+    PEP8:
+	>>> import os
+	>>> os.popen("pep8 2-matrix_divided.py").read()
+	''
+
+    NEW_LINE AT THE END OF THE FILE
+	>>> os.popen("cat -e 2-matrix_divided.py | tail -1").read()[-1]
+	'\n'
+
+Valid inputs have correct outputs:
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+	>>> matrix = [[3695.596, 23669.2, 0], [-1, 29, 68]]
+	>>> matrix_divided(matrix, 96.3)
+	[[38.38, 245.79, 0.0], [-0.01, 0.3, 0.71]]
+
+	>>> matrix = [[0, 0, 0], [-1, 1, 4]]
+	>>> matrix_divided(matrix, -0.000005)
+	[[-0.0, -0.0, -0.0], [200000.0, -200000.0, -800000.0]]
+
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+	>>> matrix_divided([[-1, -10], [-4, -5]], 3)
+	[[-0.33, -3.33], [-1.33, -1.67]]
+
+	>>> matrix_divided([[1, 10], [4, 5]], -3)
+	[[-0.33, -3.33], [-1.33, -1.67]]
+
+	>>> matrix_divided([[1, 2], [4, 120100]], 999999999999999999999999999999)
+	[[0.0, 0.0], [0.0, 0.0]]
+
+	>>> matrix_divided([[]], 1)
+	[[]]
+
+	>>> matrix_divided([[1, float('inf'), 3], [4, 5, 6]], 1)
+	[[1.0, inf, 3.0], [4.0, 5.0, 6.0]]
+
+	>>> matrix_divided([[1, float('inf'), 3], [4, 5, 6]], float('inf'))
+	[[0.0, nan, 0.0], [0.0, 0.0, 0.0]]
+
+
+
+Invalid inputs have invalid outputs:
+
+    INVALID MATRIX PASSED:
+
+	>>> matrix = [[1, 2, 3], [4, 5, 6, 7]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
+
+	>>> matrix = [[1, 2, 3], "Hello"]
+	>>> matrix_divided(matrix, 1)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided(None, 1)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided({1:2, 2:2}, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided({1, 2}, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided((1, 2), 3)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided("G", 3)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided(1.5, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+	>>> matrix_divided(1, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided([[{2 : 4}, 2, 3], [4, 5, 6]], 3)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided([[(2,4), 2, 3], [4, 5, 6]], 3)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided([[{2}, 2, 3], [4, 5, 6]], 3)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided([["h", 2, 3], [4, 5, 6]], 3)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided([2, 2, 3], 1)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+INVALID DIV PASSED:
+
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], None)
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], True)
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
+	>>> matrix_divided([[1, 2], [4, 3]], 0)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
+
+	>>> matrix_divided([[1, 2], [4, 3]], {1:2, 2:1})
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
+	>>> matrix_divided([[1, 2], [4, 3]], {1, 2})
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
+	>>> matrix_divided([[1, 2], [4, 3]], [1, 2])
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
+	>>> matrix_divided([[1, 2], [4, 3]], (1, 2))
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
+	>>> matrix_divided([[1, 2], [4, 3]], "s")
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number

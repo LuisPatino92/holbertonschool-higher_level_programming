@@ -1,0 +1,70 @@
+The ``3-say_my_name`` module
+=============================
+
+Importing ``say_my_name`` from the ``3-say_my_name`` module.
+
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Requirements checking:
+
+    MODULE DOCSTRING:
+	>>> m = __import__("3-say_my_name").__doc__
+	>>> len(m) > 1
+	True
+
+    FUNCTION DOCSTRING:
+	>>> f = __import__("3-say_my_name").say_my_name.__doc__
+	>>> len(f) > 1
+	True
+
+    PEP8:
+	>>> import os
+	>>> os.popen("pep8 3-say_my_name.py").read()
+	''
+
+    NEW_LINE AT THE END OF THE FILE
+	>>> os.popen("cat -e 3-say_my_name.py | tail -1").read()[-1]
+	'\n'
+
+VALID INPUTS HAVE CORRECT OUTPUTS:
+
+	>>> say_my_name("Lucho", "Patiño")
+	My name is Lucho Patiño
+
+	>>> say_my_name("Lu")
+	My name is Lu 
+
+	>>> say_my_name("23", "Pa")
+	My name is 23 Pa
+
+	>>> say_my_name("")
+	My name is  
+
+	>>> say_my_name("", "Python")
+	My name is  Python
+
+INVALID INPUTS RAISE ERRORS:
+	>>> say_my_name(23, "Patiño")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+	>>> say_my_name(5)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+	>>> say_my_name(["Luis", "Alejandro"], "Patiño")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+	>>> say_my_name("Lucho", 2)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+	>>> say_my_name("", 2)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string

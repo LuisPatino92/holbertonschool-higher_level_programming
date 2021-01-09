@@ -1,0 +1,124 @@
+The ``0-add_integer`` module
+=============================
+
+Importing ``add_integer`` from the ``0-add_integer`` module.
+
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+Requirements checking:
+
+    MODULE DOCSTRING:
+	>>> m = __import__("0-add_integer").__doc__
+	>>> len(m) > 1
+	True
+
+    FUNCTION DOCSTRING:
+	>>> f = __import__("0-add_integer").add_integer.__doc__
+	>>> len(f) > 1
+	True
+
+    PEP8:
+	>>> import os
+	>>> os.popen("pep8 0-add_integer.py").read()
+	''
+
+    NEW_LINE AT THE END OF THE FILE
+	>>> os.popen("cat -e 0-add_integer.py | tail -1").read()[-1]
+	'\n'
+
+
+Using the function in some easy cases:
+
+	>>> add_integer(2)
+	100
+
+	>>> add_integer(-10369, 0)
+	-10369
+
+	>>> add_integer(1, -963)
+	-962
+
+	>>> add_integer(999999999999999999999999999999999999999999999999999999999, 1)
+	1000000000000000000000000000000000000000000000000000000000
+
+    FLOATS:
+	>>> add_integer(999999999999999999999999999999999999999999999999999999999.5, 1)
+	Traceback (most recent call last):
+	...
+	OverflowError: a too large
+
+	>>> add_integer(-505.9, 505.1)
+	0
+
+	>>> add_integer(2.9)
+	100
+
+Error cases:
+
+    NO ARGUMENTS
+	>>> add_integer()
+	Traceback (most recent call last):
+	    ...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+    OVERFLOW:
+	>>> add_integer(999999999999999999999999999999999999999999999999999999999.9, 1.2)
+	Traceback (most recent call last):
+	...
+	OverflowError: a too large
+
+	>>> add_integer(1, 1e18)
+	Traceback (most recent call last):
+	...
+	OverflowError: b too large
+
+	Checking for passed inf:
+	>>> add_integer(1, float('inf'))
+	Traceback (most recent call last):
+	...
+	OverflowError: b too large
+
+
+
+Wrong arguments type:
+
+    NaN:
+	>>> add_integer(1, float('NaN'))
+	Traceback (most recent call last):
+	...
+	ValueError: cannot convert float NaN to integer
+
+    Valid/invalid arguments:
+	>>> add_integer((1, 2), 2)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(3, "2")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer((2,), {"key": "value"})
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(True, 1)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(0, False)
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+	>>> add_integer(10 ,10)
+	Que bien
+	20
