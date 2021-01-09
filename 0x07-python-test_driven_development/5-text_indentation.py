@@ -27,3 +27,7 @@ def text_indentation(text):
     for i in range(len(splited) - 1):
         print(splited[i].lstrip().rstrip(), end="\n\n")
     print(splited[i + 1].lstrip().rstrip(), end="")
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/5-text_indentation.txt")
