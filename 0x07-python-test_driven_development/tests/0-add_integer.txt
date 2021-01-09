@@ -118,7 +118,3 @@ Wrong arguments type:
 	Traceback (most recent call last):
 	...
 	TypeError: add_integer() missing 1 required positional argument: 'a'
-
-	>>> add_integer(10 ,10)
-	Que bien
-	20
