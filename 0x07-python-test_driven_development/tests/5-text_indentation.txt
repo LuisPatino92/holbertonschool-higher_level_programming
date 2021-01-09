@@ -1,0 +1,7 @@
+The ``text_indentation`` module
+
+
+Checking for module docstring:
+	>>> m = __import__("5-text_indentation").__doc__
+	>>> len(m) > 1
+	True
