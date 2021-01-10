@@ -4,6 +4,6 @@ lower = [chr(x) for x in range(122, 96, -1)]
 
 for i in range(0, 26, 1):
     if i % 2 != 0:
-        print(upper[i], end="")
+        print("{}".format(upper[i]), end="")
     else:
-        print(lower[i], end="")
+        print("{}".format(lower[i]), end="")
