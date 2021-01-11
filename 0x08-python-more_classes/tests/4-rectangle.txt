@@ -1,0 +1,94 @@
+The ``4-rectangle`` module
+=============================
+
+Importing ``Rectangle`` from the ``-rectangle`` module.
+
+	>>> Rectangle = __import__("4-rectangle").Rectangle
+
+Requirements checking:
+
+    MODULE DOCSTRING:
+	>>> m = __import__("4-rectangle").__doc__
+	>>> len(m) > 1
+	True
+
+    Class DOCSTRING:
+	>>> f = __import__("4-rectangle").Rectangle.__doc__
+	>>> len(f) > 1
+	True
+
+    PEP8:
+	>>> import os
+	>>> os.popen("pep8 4-rectangle.py").read()
+	''
+
+    NEW_LINE AT THE END OF THE FILE
+	>>> os.popen("cat -e 4-rectangle.py | tail -1").read()[-1]
+	'\n'
+
+    SHEBANG
+    	>>> os.popen("cat -e 4-rectangle.py | head -1").read()[0:-2]
+	'#!/usr/bin/python3'
+
+    Main cases:
+        >>> my_rectangle = Rectangle(2, 4)
+        >>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+        Area: 8 - Perimeter: 12
+
+        >>> my_rectangle = Rectangle(2, 4)
+        >>> print(str(my_rectangle))
+        ##
+        ##
+        ##
+        ##
+
+        >>> my_rectangle = Rectangle(2, 4)
+        >>> my_rectangle.width = 10
+        >>> my_rectangle.height = 3
+        >>> print(my_rectangle)
+        ##########
+        ##########
+        ##########
+
+        >>> my_rectangle = Rectangle(2, 4)
+        >>> print(str(my_rectangle))
+        ##
+        ##
+        ##
+        ##
+
+
+        >>> print(my_rectangle)
+        ##
+        ##
+        ##
+        ##
+
+        >>> print(repr(my_rectangle))
+        Rectangle(2, 4)
+
+        >>> new_rectangle = eval(repr(my_rectangle))
+        >>> print(str(new_rectangle))
+        ##
+        ##
+        ##
+        ##
+
+        >>> print(repr(new_rectangle))
+        Rectangle(2, 4)
+
+        >>> print(new_rectangle is my_rectangle)
+        False
+
+        >>> print(type(new_rectangle) is type(my_rectangle))
+        True
+
+        >>> square = Rectangle(-5, 10)
+        Traceback (most recent call last):
+        ...
+        ValueError: width must be >= 0
+
+        >>> square = Rectangle(5, -10)
+        Traceback (most recent call last):
+        ...
+        ValueError: height must be >= 0
