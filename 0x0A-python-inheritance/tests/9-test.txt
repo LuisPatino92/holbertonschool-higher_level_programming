@@ -1,0 +1,27 @@
+The ``Rectangle`` module
+=============================
+
+Requirements checking:
+
+    MODULE DOCSTRING:
+	>>> m = __import__("9-rectangle").__doc__
+	>>> len(m) > 1
+	True
+
+    Class DOCSTRING:
+	>>> f = __import__("9-rectangle").Rectangle.__doc__
+	>>> len(f) > 1
+	True
+
+    PEP8:
+	>>> import os
+	>>> os.popen("pep8 9-rectangle.py").read()
+	''
+
+    NEW_LINE AT THE END OF THE FILE
+	>>> os.popen("cat -e 9-rectangle.py | tail -1").read()[-1]
+	'\n'
+
+    SHEBANG
+    	>>> os.popen("cat -e 9-rectangle.py | head -1").read()[0:-2]
+	'#!/usr/bin/python3'
