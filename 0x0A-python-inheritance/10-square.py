@@ -11,9 +11,3 @@ class Square(Rectangle):
     def __init__(self, size):
         """Constructor for square Object"""
         super().__init__(size, size)
-        self.size = size
-
-    def area(self):
-        """Sets the area of the square"""
-
-        return self.size ** 2
