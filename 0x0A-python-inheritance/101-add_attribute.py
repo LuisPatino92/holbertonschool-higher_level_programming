@@ -10,7 +10,7 @@ def add_attribute(obj, attr, value):
         value:      The value to be asigned to the attribute
     """
 
-    if "__dict__" not in list(map(str, dir(type(obj)))):
+    if "__dict__" not in dir(type(obj)):
         raise TypeError("can't add new attribute ")
 
     obj.__dict__[attr] = value
