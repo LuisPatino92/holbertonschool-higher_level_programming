@@ -11,3 +11,4 @@ class Square(Rectangle):
     def __init__(self, size):
         """Constructor for square Object"""
         super().__init__(size, size)
+        self.__size = size
