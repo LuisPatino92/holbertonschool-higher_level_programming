@@ -1,0 +1,66 @@
+The ``BaseGeometry`` module
+=============================
+
+Requirements checking:
+
+    MODULE DOCSTRING:
+	>>> m = __import__("7-base_geometry").__doc__
+	>>> len(m) > 1
+	True
+
+    Class DOCSTRING:
+	>>> f = __import__("7-base_geometry").BaseGeometry.__doc__
+	>>> len(f) > 1
+	True
+
+    PEP8:
+	>>> import os
+	>>> os.popen("pep8 7-base_geometry.py").read()
+	''
+
+    NEW_LINE AT THE END OF THE FILE
+	>>> os.popen("cat -e 7-base_geometry.py | tail -1").read()[-1]
+	'\n'
+
+    SHEBANG
+    	>>> os.popen("cat -e 7-base_geometry.py | head -1").read()[0:-2]
+	'#!/usr/bin/python3'
+
+    Importing BaseGeometry class:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+	>>> figure = BaseGeometry()
+	>>> figure.integer_validator("num", 12)
+
+	>>> figure = BaseGeometry()
+	>>> figure.integer_validator("num", 36)
+
+	>>> figure.integer_validator("num", 12.23)
+	Traceback (most recent call last):
+		...
+	TypeError: num must be an integer
+
+	>>> figure.integer_validator("num", None)
+	Traceback (most recent call last):
+		...
+	TypeError: num must be an integer
+
+	>>> figure.integer_validator("num", [1, 2])
+	Traceback (most recent call last):
+		...
+	TypeError: num must be an integer
+
+	>>> figure.integer_validator("num", (1, 2))
+	Traceback (most recent call last):
+		...
+	TypeError: num must be an integer
+
+	>>> figure.integer_validator("num", 0)
+	Traceback (most recent call last):
+		...
+	ValueError: num must be greater than 0
+
+	>>> figure.integer_validator("num", -9)
+	Traceback (most recent call last):
+		...
+	ValueError: num must be greater than 0
