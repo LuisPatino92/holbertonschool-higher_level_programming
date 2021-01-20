@@ -1,0 +1,27 @@
+The ``is_kind_of_class`` module
+=============================
+
+Requirements checking:
+
+    MODULE DOCSTRING:
+	>>> m = __import__("3-is_kind_of_class").__doc__
+	>>> len(m) > 1
+	True
+
+    Class DOCSTRING:
+	>>> f = __import__("3-is_kind_of_class").is_kind_of_class.__doc__
+	>>> len(f) > 1
+	True
+
+    PEP8:
+	>>> import os
+	>>> os.popen("pep8 3-is_kind_of_class.py").read()
+	''
+
+    NEW_LINE AT THE END OF THE FILE
+	>>> os.popen("cat -e 3-is_kind_of_class.py | tail -1").read()[-1]
+	'\n'
+
+    SHEBANG
+    	>>> os.popen("cat -e 3-is_kind_of_class.py | head -1").read()[0:-2]
+	'#!/usr/bin/python3'
