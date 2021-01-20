@@ -11,6 +11,6 @@ def add_attribute(obj, attr, value):
     """
 
     if "__dict__" not in dir(type(obj)):
-        raise TypeError("can't add new attribute ")
+        raise TypeError("can't add new attribute")
 
     obj.__dict__[attr] = value
