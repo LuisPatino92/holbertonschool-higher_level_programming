@@ -8,6 +8,6 @@ import json
 def class_to_json(obj):
     """Returns the dictionary description for JSON of an object"""
 
-    serial = json.dumps(obj.__dict__)
+    serial = json.loads(json.dumps(obj.__dict__))
 
-    return eval(serial)
+    return serial
