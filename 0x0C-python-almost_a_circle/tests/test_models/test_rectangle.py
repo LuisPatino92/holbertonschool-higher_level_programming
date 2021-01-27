@@ -2,8 +2,12 @@
 """unitary test for Base Class"""
 
 from models import rectangle
+from models import base
 import unittest
 import pep8
+
+Base = base.Base
+Rectangle = rectangle.Rectangle
 
 
 class RectangleTests(unittest.TestCase):
@@ -27,6 +31,18 @@ class RectangleTests(unittest.TestCase):
         r = pep8.StyleGuide().check_files(
                 ['tests/test_models/test_rectangle.py'])
         self.assertEqual(r.total_errors, 0, "Pep8 issues Found.")
+
+    def test_id_mechanism(self):
+        """Checks if id mechanism was inherited OK"""
+        r1 = Rectangle(9, 9)
+        b1 = Base(10)
+        r2 = Rectangle(9, 9)
+        b2 = Base()
+
+        self.assertEqual(r1.id, 3)
+        self.assertEqual(b1.id, 10)
+        self.assertEqual(r2.id, 4)
+        self.assertEqual(b2.id, 3)
 
 if __name__ == "__main__":
     unittest.main()

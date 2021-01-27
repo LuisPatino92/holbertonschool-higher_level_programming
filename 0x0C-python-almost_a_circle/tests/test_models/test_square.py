@@ -2,8 +2,14 @@
 """unitary test for Base Class"""
 
 from models import square
+from models import rectangle
+from models import base
 import unittest
 import pep8
+
+Base = base.Base
+Rectangle = rectangle.Rectangle
+Square = square.Square
 
 
 class SquareTests(unittest.TestCase):
