@@ -45,7 +45,7 @@ class Base:
             for element in list_objs:
                 list_dicts += [element.to_dictionary()]
         with open("{}.json".format(cls.__name__), 'w') as f:
-            json.dump(list_dicts, f)
+            f.write(cls.to_json_string(list_dicts))
 
     @staticmethod
     def from_json_string(json_string):
