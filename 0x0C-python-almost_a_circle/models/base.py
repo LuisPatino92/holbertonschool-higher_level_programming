@@ -64,8 +64,7 @@ class Base:
             new_instance = cls(1, 1)
         elif cls.__name__ == "Square":
             new_instance = cls(1)
-        for element in dictionary:
-            setattr(new_instance, element, dictionary[element])
+        cls.update(new_instance, **dictionary)
         return new_instance
 
     @classmethod
