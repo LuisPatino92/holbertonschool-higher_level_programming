@@ -98,3 +98,26 @@ class Base:
             csv_str += str(element.y) + "\n"
         with open("{}.csv".format(cls.__name__), 'w') as f:
             f.write(csv_str)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads a list of instances from a .csv file"""
+        with open("{}.csv".format(cls.__name__), 'r') as f:
+            csv_string = f.read()
+        csv_lines = csv_string.split('\n')
+        dict_obj = []
+        for element in csv_lines[:-1]:
+            csv_dict = {}
+            if cls.__name__ == "Rectangle":
+                csv_dict['id'] = int(element.split(',')[0])
+                csv_dict['width'] = int(element.split(',')[1])
+                csv_dict['height'] = int(element.split(',')[2])
+                csv_dict['x'] = int(element.split(',')[3])
+                csv_dict['y'] = int(element.split(',')[4])
+            elif cls.__name__ == "Square":
+                csv_dict['id'] = int(element.split(',')[0])
+                csv_dict['size'] = int(element.split(',')[1])
+                csv_dict['x'] = int(element.split(',')[2])
+                csv_dict['y'] = int(element.split(',')[3])
+            dict_obj += [cls.create(**csv_dict)]
+        return dict_obj
