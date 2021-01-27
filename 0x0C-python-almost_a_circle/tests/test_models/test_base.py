@@ -2,13 +2,21 @@
 """unitary test for Base Class"""
 
 
+from models import base
 import unittest
 import pep8
-from models.base import Base
 
 
 class BaseTests(unittest.TestCase):
     """Tests for Base class"""
+
+    def test_module_docs(self):
+        """Test for module docstring"""
+        self.assertTrue(len(base.__doc__) > 1)
+
+    def test_class_docs(self):
+        """Test for Base docstring"""
+        self.assertTrue(len(base.Base.__doc__) > 1)
 
     def test_pep8_main_file(self):
         """Test pep8 ok."""
@@ -20,9 +28,6 @@ class BaseTests(unittest.TestCase):
         r = pep8.StyleGuide().check_files(['tests/test_models/test_base.py'])
         self.assertEqual(r.total_errors, 0, "Pep8 issues Found.")
 
-    def test_docs(self):
-        """Test for Base docstring"""
-        self.assertTrue(len(Base.__doc__) > 1)
 
 if __name__ == "__main__":
     unittest.main()

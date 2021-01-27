@@ -1,13 +1,21 @@
 #!/usr/bin/python3
 """unitary test for Base Class"""
 
-
+from models import square
 import unittest
 import pep8
 
 
 class SquareTests(unittest.TestCase):
     """Tests for Base class"""
+
+    def test_module_docs(self):
+        """Test for module docstring"""
+        self.assertTrue(len(square.__doc__) > 1)
+
+    def test_class_docs(self):
+        """Test for Base docstring"""
+        self.assertTrue(len(square.Square.__doc__) > 1)
 
     def test_pep8_main_file2(self):
         """Test pep8 ok."""
