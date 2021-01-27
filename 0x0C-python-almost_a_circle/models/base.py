@@ -81,3 +81,20 @@ class Base:
         for element in objs:
             list_ins += [cls.create(**element)]
         return list_ins
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Saves a list of instances to a file in CSV format"""
+
+        csv_str = ""
+        for element in list_objs:
+            csv_str += str(element.id) + ","
+            if cls.__name__ == "Square":
+                csv_str += str(element.size) + ","
+            elif cls.__name__ == "Rectangle":
+                csv_str += str(element.width) + ","
+                csv_str += str(element.height) + ","
+            csv_str += str(element.x) + ","
+            csv_str += str(element.y) + "\n"
+        with open("{}.csv".format(cls.__name__), 'w') as f:
+            f.write(csv_str)
