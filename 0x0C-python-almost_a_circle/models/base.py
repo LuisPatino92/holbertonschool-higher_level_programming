@@ -29,8 +29,8 @@ class Base:
             list_dictionaries (list of dicts): The list of dictionaries whose
                      representation is desired.
         """
-        if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
+        if list_dictionaries is None:
+            return []
         else:
             json_dicts = json.dumps(list_dictionaries)
         return json_dicts
