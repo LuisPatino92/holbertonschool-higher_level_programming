@@ -22,6 +22,7 @@ class Base:
         else:
             self.id = id
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """Returns the string representation of a list of dictionaries
            Args:
@@ -46,6 +47,7 @@ class Base:
         with open("{}.json".format(cls.__name__), 'w') as f:
             json.dump(list_dicts, f)
 
+    @staticmethod
     def from_json_string(json_string):
         """Constructs a list object with base on the Json representation"""
         if json_string is None or json_string == "":
