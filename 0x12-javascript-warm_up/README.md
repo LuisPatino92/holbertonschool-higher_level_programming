@@ -22,6 +22,17 @@ Here how the script works:
     guillaume@ubuntu:~/0x12$ semistandard ./0-javascript_is_amazing.js 
     guillaume@ubuntu:~/0x12$ 
 
+>**[1-multi_languages.js](1-multi_languages.js)**
+
+Script that prints 3 lines related with C, Python and JS. Usage: `./1-multi_languages.js`.
+
+Here how the script works:
+
+    guillaume@ubuntu:~/0x12$ ./1-multi_languages.js 
+    C is fun
+    Python is cool
+    JavaScript is amazing
+    guillaume@ubuntu:~/0x12$ 
 
 ---
 
