@@ -16,11 +16,11 @@ Script that prints "Javascript is amazing". Usage: `./0-javascript_is_amazing.js
 
 Here how the script works:
 
-    guillaume@ubuntu:~/0x12$ ./0-javascript_is_amazing.js 
+    guillaume@ubuntu:~/0x12$ ./0-javascript_is_amazing.js
     JavaScript is amazing
-    guillaume@ubuntu:~/0x12$ 
-    guillaume@ubuntu:~/0x12$ semistandard ./0-javascript_is_amazing.js 
-    guillaume@ubuntu:~/0x12$ 
+    guillaume@ubuntu:~/0x12$
+    guillaume@ubuntu:~/0x12$ semistandard ./0-javascript_is_amazing.js
+    guillaume@ubuntu:~/0x12$
 
 >**[1-multi_languages.js](1-multi_languages.js)**
 
@@ -28,11 +28,25 @@ Script that prints 3 lines related with C, Python and JS. Usage: `./1-multi_lang
 
 Here how the script works:
 
-    guillaume@ubuntu:~/0x12$ ./1-multi_languages.js 
+    guillaume@ubuntu:~/0x12$ ./1-multi_languages.js
     C is fun
     Python is cool
     JavaScript is amazing
-    guillaume@ubuntu:~/0x12$ 
+    guillaume@ubuntu:~/0x12$
+
+>**[2-arguments.js](2-arguments.js)**
+
+Script that prints a message depending of the number of arguments passed. Usage: `./2-arguments.js`.
+
+Here how the script works:
+
+    guillaume@ubuntu:~/0x12$ ./2-arguments.js
+    No argument
+    guillaume@ubuntu:~/0x12$ ./2-arguments.js Holberton
+    Argument found
+    guillaume@ubuntu:~/0x12$ ./2-arguments.js Holberton School
+    Arguments found
+    guillaume@ubuntu:~/0x12$
 
 ---
 
