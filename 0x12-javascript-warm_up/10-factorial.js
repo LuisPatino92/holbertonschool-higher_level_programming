@@ -5,4 +5,4 @@ function fact (num) {
   else return (fact(num - 1) * num);
 }
 
-console.log(`${fact(Number(process.argv[2]))}`)
+console.log(`${fact(Number(process.argv[2]))}`);
