@@ -11,7 +11,7 @@ class Square extends SquareMod {
           console.log(c.repeat(this.width));
         }
       } else {
-        this.print()
+        this.print();
       }
     }
   }
