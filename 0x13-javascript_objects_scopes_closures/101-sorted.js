@@ -11,5 +11,4 @@ for (let element in originalDict) {
   newObj[originalDict[element]].push(element);
 }
 
-console.log(originalDict);
 console.log(newObj);
