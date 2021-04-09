@@ -1,3 +1,3 @@
 #!/bin/bash
 # Post with body parameters
-curl -sd 'email=hr@holbertonschool.com&subject=I will always be here for PLD' "$1"
+curl -o /dev/null -s -w "%{http_code}" "$1"
