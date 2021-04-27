@@ -1,338 +1,85 @@
-# Holberton School Project
+# 0x06. Python - Classes and Objects
 
->This repo is part of the Holberton School curriculum.
+## Resources:books:
+Read or watch:
+* [Object Oriented Programming](https://intranet.hbtn.io/rltoken/izl1kO1isRJo6h_Ce2pmhw)
+* [Object-Oriented Programming](https://intranet.hbtn.io/rltoken/K5t1QFchQYs7rkt62uMo7A)
+* [Properties vs. Getters and Setters](https://intranet.hbtn.io/rltoken/LZg7XYGGZj49Gu2276afpA)
+* [Learn to Program 9 : Object Oriented Programming](https://intranet.hbtn.io/rltoken/aFk7Ki8TPw5vZZBx2JXvIQ)
+* [Python Classes and Objects](https://intranet.hbtn.io/rltoken/CFTUXsxbTVu4xb698_2bmQ)
+* [Object Oriented Programming](https://intranet.hbtn.io/rltoken/DK1vkIQ0xT1fmMrmBcSGiA)
 
-## Python - Classes and Objects
+---
+## Learning Objectives:bulb:
+What you should learn from this project:
 
-First approach to OOP, in this project all the tasks are aimed to develop a Square model, step by step. I used constructor methods, some private attributes, and other related features.
+* Why Python programming is awesome 
+* What is OOP
+* “first-class everything”
+* What is a class
+* What is an object and an instance
+* What is the difference between a class and an object or instance
+* What is an attribute
+* What are and how to use public, protected and private attributes
+* What is self
+* What is a method
+* What is the special __init__ method and how to use it
+* What is Data Abstraction, Data Encapsulation, and Information Hiding
+* What is a property
+* What is the difference between an attribute and a property in Python
+* What is the Pythonic way to write getters and setters in Python
+* How to dynamically create arbitrary new attributes for existing instances of a class
+* How to bind attributes to object and classes
+* What is the __dict__ of a class and/or instance of a class and what does it contain
+* How does Python find the attributes of an object or class
+* How to use the getattr function
 
 ---
 
-## In this REPO:
+### [0. My first square](./0-square.py)
+* Write an empty class Square that defines a square:
 
->**0-square.py**
 
-Empty class that defines a `Square`. Here an instance of how this empy class behaves:
+### [1. Square with size](./1-square.py)
+* Write a class Square that defines a square by: (based on 0-square.py)
 
-    LuchoPatiño@practice:~/0x06$ cat 0-main.py
-    #!/usr/bin/python3
-    Square = __import__('0-square').Square
 
-    my_square = Square()
-    print(type(my_square))
-    print(my_square.__dict__)
+### [2. Size validation](./2-square.py)
+* Write a class Square that defines a square by: (based on 1-square.py)
 
-    LuchoPatiño@practice:~/0x06$ ./0-main.py
-    <class '0-square.Square'>
-    {}
 
+### [3. Area of a square](./3-square.py)
+* Write a class Square that defines a square by: (based on 2-square.py)
 
->**1-square.py**
 
-This one has the same class but with the following attributes:
+### [4. Access and update private attribute](./4-square.py)
+* Write a class Square that defines a square by: (based on 3-square.py)
 
-- Private instance attribute: size
-- Instantiation with size (no type/value verification)
 
-Here, an instance of how `Square` behaves:
+### [5. Printing a square](./5-square.py)
+* Write a class Square that defines a square by: (based on 4-square.py)
 
-    LuchoPatiño@practice:~/0x06$ cat 1-main.py
-    #!/usr/bin/python3
-    Square = __import__('1-square').Square
 
-    my_square = Square(3)
-    print(type(my_square))
-    print(my_square.__dict__)
+### [6. Coordinates of a square](./6-square.py)
+* Write a class Square that defines a square by: (based on 5-square.py)
 
-    try:
-        print(my_square.size)
-    except Exception as e:
-        print(e)
 
-    try:
-        print(my_square.__size)
-    except Exception as e:
-        print(e)
+### [7. Singly linked list](./100-singly_linked_list.py)
+* Write a class Node that defines a node of a singly linked list by: 
 
-    LuchoPatiño@practice:~/0x06$ ./1-main.py
-    <class '1-square.Square'>
-    {'_Square__size': 3}
-    'Square' object has no attribute 'size'
-    'Square' object has no attribute '__size'
 
+### [8. Print Square instance](./101-square.py)
+* Write a class Square that defines a square by: (based on 6-square.py)
 
->**2-square.py**
 
-The same `Square` class with two additional things:
+### [9. Compare 2 squares](./102-square.py)
+* Write a class Square that defines a square by: (based on 4-square.py)
 
-- Now, `Size` is optional, 0 by default.
-- If negative or not integer values are passed as size, exceptions will be raised.
 
-Here an instance of how the class could be used:
-
-    LuchoPatiño@practice:~/0x06$ cat 2-main.py
-    #!/usr/bin/python3
-    Square = __import__('2-square').Square
-
-    my_square_1 = Square(3)
-    print(type(my_square_1))
-    print(my_square_1.__dict__)
-
-    my_square_2 = Square()
-    print(type(my_square_2))
-    print(my_square_2.__dict__)
-
-    try:
-        print(my_square_1.size)
-    except Exception as e:
-        print(e)
-
-    try:
-        print(my_square_1.__size)
-    except Exception as e:
-        print(e)
-
-    try:
-        my_square_3 = Square("3")
-        print(type(my_square_3))
-        print(my_square_3.__dict__)
-    except Exception as e:
-        print(e)
-
-    try:
-        my_square_4 = Square(-89)
-        print(type(my_square_4))
-        print(my_square_4.__dict__)
-    except Exception as e:
-        print(e)
-
-    LuchoPatiño@practice:~/0x06$ ./2-main.py
-    <class '2-square.Square'>
-    {'_Square__size': 3}
-    <class '2-square.Square'>
-    {'_Square__size': 0}
-    'Square' object has no attribute 'size'
-    'Square' object has no attribute '__size'
-    size must be an integer
-    size must be >= 0
-
->**3-square.py**
-
-The same `Square` class with a new method:
-
-- Public instance method: `def area(self)`: that returns the current square area.
-
-Here, an instance of how the `Square` class behave:
-
-    LuchoPatiño@practice:~/0x06$ cat 3-main.py
-    #!/usr/bin/python3
-    Square = __import__('3-square').Square
-
-    my_square_1 = Square(3)
-    print("Area: {}".format(my_square_1.area()))
-
-    try:
-        print(my_square_1.size)
-    except Exception as e:
-        print(e)
-
-    try:
-        print(my_square_1.__size)
-    except Exception as e:
-        print(e)
-
-    my_square_2 = Square(5)
-    print("Area: {}".format(my_square_2.area()))
-
-    LuchoPatiño@practice:~/0x06$ ./3-main.py
-    Area: 9
-    'Square' object has no attribute 'size'
-    'Square' object has no attribute '__size'
-    Area: 25
-
->**4-square.py**
-
-The same `Square` class, but with a setter for `size` instead of a constructor.
-
-Here an instance of how the class behaves:
-
-    LuchoPatiño@practice:~/0x06$ cat 4-main.py
-    #!/usr/bin/python3
-    Square = __import__('4-square').Square
-
-    my_square = Square(89)
-    print("Area: {} for size: {}".format(my_square.area(), my_square.size))
-
-    my_square.size = 3
-    print("Area: {} for size: {}".format(my_square.area(), my_square.size))
-
-    try:
-        my_square.size = "5 feet"
-        print("Area: {} for size: {}".format(my_square.area(), my_square.size))
-    except Exception as e:
-        print(e)
-
-    LuchoPatiño@practice:~/0x06$ ./4-main.py
-    Area: 7921 for size: 89
-    Area: 9 for size: 3
-    size must be an integer
-
->**5-square.py**
-
-The same `Square` class, but with a `my_print()` method that prints the `Square`.
-
-Here an instance of how the method behaves:
-
-    #!/usr/bin/python3
-    Square = __import__('5-square').Square
-
-    my_square = Square(3)
-    my_square.my_print()
-
-    print("--")
-
-    my_square.size = 10
-    my_square.my_print()
-
-    print("--")
-
-    my_square.size = 0
-    my_square.my_print()
-
-    print("--")
-
-    LuchoPatiño@practice:~/0x06$ ./5-main.py
-    ###
-    ###
-    ###
-    --
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    --
-
-    --
-
->**6-square.py**
-
-The same `Square` class, but with a new instance attribute `position`:
-
-Here an instance of how `Square` behaves:
-
-    #!/usr/bin/python3
-    Square = __import__('6-square').Square
-
-    my_square_1 = Square(3)
-    my_square_1.my_print()
-
-    print("--")
-
-    my_square_2 = Square(3, (1, 1))
-    my_square_2.my_print()
-
-    print("--")
-
-    my_square_3 = Square(3, (3, 0))
-    my_square_3.my_print()
-
-    print("--")
-
-    LuchoPatiño@practice:~/0x06$ ./6-main.py | tr " " "_" | cat -e
-    ###$
-    ###$
-    ###$
-    --$
-    $
-    _###$
-    _###$
-    _###$
-    --$
-    ___###$
-    ___###$
-    ___###$
-    --$
-
->**101-square.py**
-
-The same `Square` class, but now print(`Square instance`) has the same behavior than `my_print()` method.
-
-    LuchoPatiño@practice:~/0x06$ cat 101-main.py
-    #!/usr/bin/python3
-    Square = __import__('101-square').Square
-
-    my_square = Square(5, (0, 0))
-    print(my_square)
-
-    print("--")
-
-    my_square = Square(5, (4, 1))
-    print(my_square)
-
-    LuchoPatiño@practice:~/0x06$ ./101-main.py | tr " " "_" | cat -e
-    #####$
-    #####$
-    #####$
-    #####$
-    #####$
-    --$
-    $
-    ____#####$
-    ____#####$
-    ____#####$
-    ____#####$
-    ____#####$
-
->**102-square.py**
-
-The same `Square` class, but now its instances has the ability to be compared with `==`, `!=`, `>`, `>=`, `<` and `<=`.
-
-The comparrison is carried out with the area of the instance. Here an example of how the object behaves now:
-
-    LuchoPatiño@practice:~/0x06$ cat 102-main.py
-    #!/usr/bin/python3
-    Square = __import__('102-square').Square
-
-    s_5 = Square(5)
-    s_6 = Square(6)
-
-    if s_5 < s_6:
-        print("Square 5 < Square 6")
-    if s_5 <= s_6:
-        print("Square 5 <= Square 6")
-    if s_5 == s_6:
-        print("Square 5 == Square 6")
-    if s_5 != s_6:
-        print("Square 5 != Square 6")
-    if s_5 > s_6:
-        print("Square 5 > Square 6")
-    if s_5 >= s_6:
-        print("Square 5 >= Square 6")
-
-    LuchoPatiño@practice:~/0x06$ ./102-main.py
-    Square 5 < Square 6
-    Square 5 <= Square 6
-    Square 5 != Square 6
+### [10. ByteCode -> Python #5](./103-magic_class.py)
+* Write the Python class MagicClass that does exactly the same as the following Python bytecode:
 
 ---
 
-### Author
-
-All the code in this REPO was made by **Luis Patiño** in 2020, as part of Holberton School developer training.
-
----
-
-<div>
-<div align="center">
-<img display="block" alt="Holberton Logo" width="50%" src="https://www.holbertonschool.com/holberton-logo.png">
-</div>
-<p align="center"><b>2020</b></p>
-</div>
-
----
+## Author
+* **Lucho** - [LuisPatino92](https://github.com/LuisPatino92)
