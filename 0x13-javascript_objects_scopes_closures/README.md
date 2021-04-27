@@ -1,84 +1,89 @@
-# Holberton School Project
+# 0x13. JavaScript - Objects, Scopes and Closures
 
->This repo is part of the Holberton School curriculum. Is the second project related with JS.
+## Resources:books:
+Read or watch:
+* [JavaScript object basics](https://intranet.hbtn.io/rltoken/OJ4pU6uHwfCrAclbZsk_Hg)
+* [Object-oriented JavaScript](https://intranet.hbtn.io/rltoken/Uqv-UMsBUpHWQZXBf5fn0g)
+* [Class - ES6](https://intranet.hbtn.io/rltoken/zMWxOmGWEsOCldCKeDswCA)
+* [super - ES6](https://intranet.hbtn.io/rltoken/DTMKogwFYEgUnpLrNvTcfQ)
+* [extends - ES6](https://intranet.hbtn.io/rltoken/fh2JHfNNa-HLnmfSdOo9TA)
+* [Object prototypes](https://intranet.hbtn.io/rltoken/lrlwnQMM82RimJJcfLao5w)
+* [Inheritance in JavaScript](https://intranet.hbtn.io/rltoken/LDpXxzBrdmmXAHoNrWwLxg)
+* [Closures](https://intranet.hbtn.io/rltoken/qDa7F8060Jlhe3DZZitY4A)
+* [this/self](https://intranet.hbtn.io/rltoken/ockP7FQKKmTRvfeAHw-XSw)
+* [Modern JS](https://intranet.hbtn.io/rltoken/22mdHf9KeFhRQrLP-e1hPw)
 
-## JavaScript - Objects, Scopes and Closures
+---
+## Learning Objectives:bulb:
+What you should learn from this project:
 
-Here the OOP in JS is introduced to students!
+* Why JavaScript programming is amazing
+* How to create an object in JavaScript
+* What this means
+* What undefined means 
+* Why the variable type and scope is important
+* What is a closure
+* What is a prototype
+* How to inherit an object from another
 
 ---
 
-## In this REPO:
-
->**[0-rectangle.js](0-rectangle.js)**
-
-Empty class `Rectangle` that defines a rectangle:. Usage: `Rectangle = require('./0-rectangle')`.
-
-Here how the script works:
-
-    guillaume@ubuntu:~/0x13$ cat 0-main.js
-    #!/usr/bin/node
-    const Rectangle = require('./0-rectangle');
-
-    const r1 = new Rectangle();
-    console.log(r1);
-    console.log(r1.constructor);
-    guillaume@ubuntu:~/0x13$ ./0-main.js
-    Rectangle {}
-    [Function: Rectangle]
-    guillaume@ubuntu:~/0x13$ 
-
->**[1-rectangle.js](1-rectangle.js)**
-
-Class `Rectangle` that defines a rectangle with a Width and a Height:. Usage: `Rectangle = require('./1-rectangle')`.
-
-Here how the script works:
+### [0. Rectangle #0](./0-rectangle.js)
+* Write an empty class Rectangle that defines a rectangle:
 
 
-    guillaume@ubuntu:~/0x13$ cat 1-main.js
-    #!/usr/bin/node
-    const Rectangle = require('./1-rectangle');
+### [1. Rectangle #1](./1-rectangle.js)
+* Write a class Rectangle that defines a rectangle:
 
-    const r1 = new Rectangle(2, 3);
-    console.log(r1);
-    console.log(r1.width);
-    console.log(r1.height);
 
-    const r2 = new Rectangle(2, -3);
-    console.log(r2);
-    console.log(r2.width);
-    console.log(r2.height);
+### [2. Rectangle #2](./2-rectangle.js)
+* Write a class Rectangle that defines a rectangle:
 
-    const r3 = new Rectangle(2);
-    console.log(r3);
-    console.log(r3.width);
-    console.log(r3.height);
 
-    guillaume@ubuntu:~/0x13$ ./1-main.js
-    Rectangle { width: 2, height: 3 }
-    2
-    3
-    Rectangle { width: 2, height: -3 }
-    2
-    -3
-    Rectangle { width: 2, height: undefined }
-    2
-    undefined
-    guillaume@ubuntu:~/0x13$
+### [3. Rectangle #3](./3-rectangle.js)
+* Write a class Rectangle that defines a rectangle:
+
+
+### [4. Rectangle #4](./4-rectangle.js)
+* Write a class Rectangle that defines a rectangle:
+
+
+### [5. Square #0](./5-square.js)
+* Write a class Square that defines a square and inherits from Rectangle of 4-rectangle.js:
+
+
+### [6. Square #1](./6-square.js)
+* Write a class Square that defines a square and inherits from Square of 5-square.js:
+
+
+### [7. Occurrences](./7-occurrences.js)
+* Write a function that returns the number of occurrences in a list:
+
+
+### [8. Esrever](./8-esrever.js)
+* Write a function that returns the reversed version of a list:
+
+
+### [9. Log me](./9-logme.js)
+* Write a function that prints the number of arguments already printed and the new argument value. (see example below)
+
+
+### [10. Number conversion](./10-converter.js)
+* Write a function that converts a number from base 10 to another base passed as argument:
+
+
+### [11. Factor index](./100-map.js)
+* Write a script that imports an array and computes a new array.
+
+
+### [12. Sorted occurences](./101-sorted.js)
+* Write a script that imports a dictionary of occurrences by user id and computes a dictionary of user ids by occurrence.
+
+
+### [13. Concat files](./102-concat.js)
+* Write a script that concats 2 files.
 
 ---
 
-### Author
-
-All the code in this REPO was made by **Luis Patiño** in 2021, as part of Holberton School developer training.
-
----
-
-<div>
-<div align="center">
-<img display="block" alt="Holberton Logo" width="50%" src="https://www.holbertonschool.com/holberton-logo.png">
-</div>
-<p align="center"><b>2020</b></p>
-</div>
-
----
+## Author
+* **Lucho** - [LuisPatino92](https://github.com/LuisPatino92)
