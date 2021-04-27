@@ -1,50 +1,62 @@
-# Holberton School Project
+# 0x07. Python - Test-driven development
 
->This repo is part of the Holberton School curriculum.
+## Resources:books:
+Read or watch:
+* [doctest — Test interactive Python examples](https://intranet.hbtn.io/rltoken/alaT1C9CeCbkRKh-yjMRww)
+* [doctest – Testing through documentation](https://intranet.hbtn.io/rltoken/cpEYbv_Z55QrSVRiuG5tUw)
+* [Unit Tests in Python](https://intranet.hbtn.io/rltoken/CELicn3K8hODQsWZak_h0g)
 
-## Zero Day
+---
+## Learning Objectives:bulb:
+What you should learn from this project:
 
-This is the very first activity, the main objective is starting work with indispensable tools for programming, in this case, Vagrant, some wide used text editors as EMACS and VIM, and of course git.
-
-As one of my first activities as a programmer, you are likely won't find anything interesting here, nevertheless, you are welcome to check what's here!
+* Why Python programming is awesome
+* What’s an interactive test
+* Why tests are important
+* How to write Docstrings to create tests
+* How to write documentation for each module and function
+* What are the basic option flags to create tests
+* How to find edge cases
 
 ---
 
-## In this REPO:
+### [0. Integers addition](./0-add_integer.py)
+* Write a function that adds 2 integers.
 
->**0x00-Vagrant**
 
-The goal in this project was installing Vagrant and Virtualbox and download the box *Trusty-64*.
+### [1. Divide a matrix](./2-matrix_divided.py)
+* Write a function that divides all elements of a matrix.
 
-The first trimester in Holberton is about C and Shell. In order to have exactly the same configuration in compiler, and some enviroment variables it is a good idea to have the whole team working in similar machines. Vagrant allows the whole team to work with **exactly** the same configuration.
 
->**0x01-emacs**
+### [2. Say my name](./3-say_my_name.py)
+* Write a function that prints My name is <first name> <last name>
 
-The goal in  this project was know emacs, the text editor, and evaluate if it fits my needs.
 
-Emacs is a powerful console based text editor. Its vast key-board shortcuts makes it one of the most used text editors for write code. In fact I used emacs a lot, but when projects become more complex (needed more files open at the same time, started debbuging, and the like), I moved to VSCode.
+### [3. Print square](./4-print_square.py)
+* Write a function that prints a square with the character #.
 
->**0x02-vi**
 
-Basically the same as emacs, yes I know they are so different, but I mean that both are console based-text editors.
+### [4. Text indentation](./5-text_indentation.py)
+* Write a function that prints a text with 2 new lines after each of these characters: ., ? and :
 
->**0x03-git**
 
-A great version managment system. For Holberton School Projects we are going to use it with GitHub as server.
+### [5. Max integer - Unittest](./tests/6-max_integer_test.py)
+* Since the beginning you have been creating “Interactive tests”. For this exercise, you will add Unittests.
+
+
+### [6. Matrix multiplication](./100-matrix_mul.py)
+* Write a function that multiplies 2 matrices:
+
+
+### [7. Lazy matrix multiplication](./101-lazy_matrix_mul.py)
+* Write a function that multiplies 2 matrices by using the module NumPy
+
+
+### [8. CPython #3: Python Strings](./102-python.c)
+* 
+
 
 ---
 
-### Author
-
-All the code in this REPO was made by **Luis Patiño** in 2020, as part of Holberton School developer training.
-
----
-
-<div>
-<div align="center">
-<img display="block" alt="Holberton Logo" width="50%" src="https://www.holbertonschool.com/holberton-logo.png">
-</div>
-<p align="center"><b>2020</b></p>
-</div>
-
----
+## Author
+* **Lucho** - [LuisPatino92](https://github.com/LuisPatino92)
