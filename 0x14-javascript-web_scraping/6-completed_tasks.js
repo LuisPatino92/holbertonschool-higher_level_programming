@@ -18,5 +18,11 @@ request(url, function (err, response, body) {
       result[task.userId] += 1;
     }
   }
-  console.log(result);
+  const newDict = {};
+  for (const element of Object.keys(result)) {
+    if (result[element] !== 0) {
+      newDict[element] = result[element];
+    }
+  }
+  console.log(newDict);
 });
