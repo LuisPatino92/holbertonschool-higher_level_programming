@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 try {
-  fs.writeFileSync(process.argv[2], process.argv[3])
+  fs.writeFileSync(process.argv[2], process.argv[3]);
 } catch (err) {
-  console.log(err)
+  console.log(err);
 }
